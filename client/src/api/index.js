@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const serverUrl = process.env.REACT_APP_SERVER_URL ?? 'http://localhost:5000'
+
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: `${serverUrl}/api`,
 })
 
 export const insertMovie = payload => api.post(`/movie`, payload)
