@@ -52,11 +52,10 @@ steps:
   # [START cloudbuild_server_deploy_yaml]
   # Deploy to Cloud Run
   - name: google/cloud-sdk
-    args: ['gcloud', 'run', 'deploy', 'client',
-           '--image=us-central1-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/client:${COMMIT_SHA}',
-           '--region', 'us-central1', '--platform', 'managed',
-           '--port', '3000',
-           '--allow-unauthenticated']
+    args: ['gcloud', 'app', 'deploy',
+           'client/app.yaml',
+           '--image-url=us-central1-docker.pkg.dev/${PROJECT_ID}/${_REPOSITORY_NAME}/client:${COMMIT_SHA}',
+           '--promote']
   # [END cloudbuild_server_deploy_yaml]
 substitutions:
   _REPOSITORY_NAME: my-repository

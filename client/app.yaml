@@ -1,0 +1,11 @@
+runtime: custom
+api_version: '1.0'
+env: flexible
+threadsafe: true
+env_variables:
+  REACT_APP_SERVER_URL: 'https://server-uhvpqm6sra-uc.a.run.app'
+automatic_scaling:
+  min_instances: 2
+  max_instances: 2
+  target_cpu_utilization: 0.8
+service_account: project13-131313@appspot.gserviceaccount.com
