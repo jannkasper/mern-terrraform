@@ -6,3 +6,6 @@ env_variables:
 manual_scaling:
   instances: 1
 service_account: project13-131313@appspot.gserviceaccount.com
+network:
+  forwarded_ports:
+    - 3000/tcp
